@@ -15,7 +15,7 @@ osio {
      echo "Test cd."
     // processing openshift template present in .openshiftio/application.yaml
     def resources = processTemplate(params: [
-          release_version: "1.0.${env.BUILD_NUMBER}"
+          RELEASE_VERSION: "1.0.${env.BUILD_NUMBER}"
     ])
 
     // performs an s2i build
