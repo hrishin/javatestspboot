@@ -8,7 +8,7 @@ osio {
     echo "Test CI."
 
      integrationTestCmd = "mvn verify integration-test -Dnamespace.use.current=false -Dnamespace.use.existing=${testNamespace()} -Dit.test=*IT -DfailIfNoTests=false -DenableImageStreamDetection=true -Popenshift,openshift-it"
-     runTest commands: integrationTestCmd
+     spawn image: "java", version: "1.8", commands: args.commands
   }
 
   cd {
