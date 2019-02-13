@@ -1,4 +1,4 @@
-@Library('github.com/fabric8io/osio-pipeline@master') _
+@Library('github.com/hrishin/osio-pipeline@runtest-fix') _
 
 osio {
 
@@ -6,7 +6,7 @@ osio {
 
   ci {
     echo "Test CI..."
-    env
+    
 
      integrationTestCmd = "mvn verify integration-test -Dnamespace.use.current=false -Dnamespace.use.existing=${testNamespace()} -Dit.test=*IT -DfailIfNoTests=false -DenableImageStreamDetection=true -Popenshift,openshift-it"
      spawn image: "java", version: "1.8", commands: integrationTestCmd
