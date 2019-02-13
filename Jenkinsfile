@@ -9,7 +9,7 @@ osio {
     
 
      integrationTestCmd = "mvn verify integration-test -Dnamespace.use.current=false -Dnamespace.use.existing=${testNamespace()} -Dit.test=*IT -DfailIfNoTests=false -DenableImageStreamDetection=true -Popenshift,openshift-it"
-     spawn image: "java", version: "1.8", commands: integrationTestCmd
+     spawn image: "java", version: "1.8", commands: integrationTestCmd, stage: "test view"
   }
 
   cd {
