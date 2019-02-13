@@ -8,8 +8,8 @@ osio {
     echo "Test CI..."
      env
 
-     integrationTestCmd = "mvn verify integration-test -Dnamespace.use.current=false -Dnamespace.use.existing=${environment(type: "test")} -Dit.test=*IT -DfailIfNoTests=false -DenableImageStreamDetection=true -Popenshift,openshift-it"
-     spawn image: "java", version: "1.8", commands: integrationTestCmd, stage: "test view"
+     testCmd = "mvn test -Popenshift,openshift-it"
+     spawn image: "java", version: "1.8", commands: testCmd, stage: "test view"
   }
 
   cd {
