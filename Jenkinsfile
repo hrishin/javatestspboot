@@ -8,7 +8,7 @@ osio {
     echo "Test CI..."
      env
 
-     testCmd = "mvn test -Popenshift,openshift-it"
+     testCmd = "mvn test -Popenshift"
      spawn image: "java", version: "1.8", commands: testCmd, stage: "CI test"
   }
 
