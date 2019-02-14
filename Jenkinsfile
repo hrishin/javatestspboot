@@ -17,9 +17,9 @@ osio {
     ])
 
     // performs an s2i build
-    build resources: resources, env: 'hshinde'
+    build resources: resources, environment(type:'build')
     // deploy to stage environment
-    deploy resources: resources, env: 'stage'
+    deploy resources: resources, env: environment(type:'run')
     // wait for user to approve the promotion to "run" environment
     deploy resources: resources, env: environment(type:'run'), approval: 'manual'
 
